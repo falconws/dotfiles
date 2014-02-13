@@ -13,8 +13,8 @@
 
 ;; https://github.com/emacs-jp/init-loader
 ;; 設定ファイルを分割する拡張
-(require 'init-loader)
-(init-loader-load "~/.emacs.d/conf")
+;; (require 'init-loader)
+;; (init-loader-load "~/.emacs.d/conf")
 
 ;; "C-t" でウィンドウを切り替える。初期値はtranspose-chars
 (global-set-key (kbd "C-t") 'other-window)
