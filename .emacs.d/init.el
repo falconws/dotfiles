@@ -24,3 +24,6 @@
 
 ;; scratchの初期メッセージ消去する
 (setq initial-scratch-message "")
+
+;; 行番号を表示する
+(global-linum-mode t)
