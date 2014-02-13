@@ -18,3 +18,9 @@
 
 ;; "C-t" でウィンドウを切り替える。初期値はtranspose-chars
 (global-set-key (kbd "C-t") 'other-window)
+
+;; Welcomeメッセージを非表示にする
+(setq inhibit-startup-message t)
+
+;; scratchの初期メッセージ消去する
+(setq initial-scratch-message "")
