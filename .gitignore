@@ -2,5 +2,6 @@
 *~
 /.emacs.d/*
 
+!/.emacs.d/elisp/
 !/.emacs.d/init.el
-!/.emacs.d/conf
+!/.emacs.d/conf/
