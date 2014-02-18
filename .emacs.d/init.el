@@ -19,6 +19,9 @@
 ;; "C-t" でウィンドウを切り替える。初期値はtranspose-chars
 (global-set-key (kbd "C-t") 'other-window)
 
+;; "C-h" でBackspaceキー相当の削除をする。初期値はhelp表示
+(global-set-key (kbd "C-h") 'delete-backward-char)
+
 ;; Welcomeメッセージを非表示にする
 (setq inhibit-startup-message t)
 
