@@ -9,12 +9,28 @@
 	    (normal-top-level-add-subdirs-to-load-path))))))
 
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
-(add-to-load-path "elisp" "conf" "public_repos")
+(add-to-load-path "elisp" "conf" "public_repos" "elpa")
 
 ;; https://github.com/emacs-jp/init-loader
 ;; 設定ファイルを分割する拡張
 ;; (require 'init-loader)
 ;; (init-loader-load "~/.emacs.d/conf")
+
+(require 'package)
+(add-to-list 'package-archives
+	     '("marmalade" . "http://marmalade-repo.org/packages/")
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+;; auto-complete.el
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+(require 'auto-complete-config)
+(ac-config-default)
+;; C-n/C-pで候補選択
+(setq ac-use-menu-map t)
+(define-key ac-menu-map (kbd "C-n") 'ac-next)
+(define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
 ;; "C-t" でウィンドウを切り替える。初期値はtranspose-chars
 (global-set-key (kbd "C-t") 'other-window)
