@@ -32,6 +32,10 @@
 (define-key ac-menu-map (kbd "C-n") 'ac-next)
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
+;; C-Enterで短形選択
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+
 ;; "C-t" でウィンドウを切り替える。初期値はtranspose-chars
 (global-set-key (kbd "C-t") 'other-window)
 
