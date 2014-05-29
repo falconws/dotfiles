@@ -33,10 +33,10 @@
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
 ;; js2-mode
+(setq-default indent-tabs-mode nil)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-
 
 ;; C-Enterで短形選択
 (cua-mode t)
