@@ -59,3 +59,10 @@
 
 ;; 検索(全般)時には大文字小文字の区別をしない
 (setq case-fold-search t)
+
+;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-hook 'yaml-mode-hook
+  '(lambda ()
+    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
