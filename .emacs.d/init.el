@@ -128,3 +128,8 @@
 (when (require 'multi-term nil t)
   ;; 使用するシェルを指定
   (setq multi-term-program "/bin/bash"))
+
+;; TRAMP (local から remote ファイルを編集機能 C-x C-f /sshx:user@host:)
+;;; バックアップファイルを作成しない設定
+(add-to-list 'backup-directory-alist
+             (cons tramp-file-name-regexp nil))
