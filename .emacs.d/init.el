@@ -123,3 +123,8 @@
       '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
 
 (global-whitespace-mode 1)
+
+;; multi-term の設定
+(when (require 'multi-term nil t)
+  ;; 使用するシェルを指定
+  (setq multi-term-program "/bin/bash"))
