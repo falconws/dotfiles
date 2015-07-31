@@ -70,9 +70,6 @@
 ;; web-mode
 (require 'web-mode)
 
-;; php-mode
-(require 'php-mode)
-
 ;;; 適用する拡張子
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -102,6 +99,9 @@
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)
+
+;; php-mode
+(require 'php-mode)
 
 ;;; カラーテーマ設定
 ;;; http://aoe-tk.hatenablog.com/entry/20130210/1360506829
