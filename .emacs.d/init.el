@@ -60,6 +60,14 @@
 ;; 検索(全般)時には大文字小文字の区別をしない
 (setq case-fold-search t)
 
+;; temp ファイル類を作成しないようにする
+;; http://masutaka.net/chalow/2014-05-11-1.html
+;;; filename~ のバックアップファイルを作成しないようにする
+(setq make-backup-files nil)
+
+(setq auto-save-list-file-prefix nil)
+(setq create-lockfiles nil)
+
 ;; yaml-mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
