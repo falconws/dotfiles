@@ -5,5 +5,7 @@
 
 !/.emacs.d/elisp/
 !/.emacs.d/init.el
+!/.emacs.d/init-linux.el
+!/.emacs.d/init-windows.el
 !/.emacs.d/conf/
 !/.emacs.d/elpa/
