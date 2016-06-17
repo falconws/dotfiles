@@ -3,24 +3,27 @@
   (let (path)
     (dolist (path paths paths)
       (let ((default-directory
-	      (expand-file-name (concat user-emacs-directory path))))
-	(add-to-list 'load-path default-directory)
-	(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-	    (normal-top-level-add-subdirs-to-load-path))))))
+          (expand-file-name (concat user-emacs-directory path))))
+          (add-to-list 'load-path default-directory)
+      (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+          (normal-top-level-add-subdirs-to-load-path))))))
 
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
-(add-to-load-path "elisp" "conf" "public_repos" "elpa")
-
-;; https://github.com/emacs-jp/init-loader
-;; 設定ファイルを分割する拡張
-;; (require 'init-loader)
-;; (init-loader-load "~/.emacs.d/conf")
+(add-to-load-path "elisp" "conf" "elpa")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+
+;; Linux 特化の設定
+(when (equal system-type 'gnu/linux)
+  (load-file "~/.emacs.d/init-linux.el"))
+
+;; Windows 特化の設定
+(when (equal system-type 'windows-nt)
+  (load-file "~/.emacs.d/init-windows.el"))
 
 ;; auto-complete.el
 (require 'auto-complete)
@@ -163,3 +166,17 @@
     (let ((help (get-char-property (point) 'help-echo)))
       (if help (message "%s" help)))))
 (add-hook 'post-command-hook 'flymake-show-help)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (flymake-python-pyflakes yaml-mode web-mode php-mode markdown-mode js2-mode auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
