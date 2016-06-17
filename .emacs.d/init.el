@@ -134,9 +134,10 @@
 (global-whitespace-mode 1)
 
 ;; multi-term の設定
-(when (require 'multi-term nil t)
+;;; 新しい Emacs でうまく動かないのでコメントアウトして無効化
+;(when (require 'multi-term nil t)
   ;; 使用するシェルを指定
-  (setq multi-term-program "/bin/bash"))
+;  (setq multi-term-program "/bin/bash"))
 
 ;; TRAMP (local から remote ファイルを編集機能 C-x C-f /sshx:user@host:)
 ;;; バックアップファイルを作成しない設定
