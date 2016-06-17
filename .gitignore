@@ -1,8 +1,8 @@
 .*~
 *~
 /.emacs.d/*
+/.emacs.d/elpa/gnupg/
 /.emacs.d/elpa/archives/
-
 !/.emacs.d/elisp/
 !/.emacs.d/init.el
 !/.emacs.d/init-linux.el
